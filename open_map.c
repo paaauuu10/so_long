@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 11:39:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/08 15:39:53 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/08 16:35:36 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,24 @@ void    ft_rows_and_columns(t_data *info, int fd)
     }   
 }
 
+void    ft_create_matrix(t_data *info, int fd)
+{
+    int i;
+
+    i = 0;
+    info->map = malloc(sizeof(char *) * info->n_row + 1);
+    if (!info->map)
+        ft_error_free("Error generating memory", info);
+    while (info->n_row - i)
+    {
+        info->map[i] = get_next_line(fd);
+        if (!info->map[i])
+            ft_error_free("Error getting de line to create the map", info);
+        i++;
+    }
+    info->map[i] = NULL;
+}
+
 void    ft_open_map(char **argv, t_data *info)
 {
     int fd;
@@ -45,5 +63,15 @@ void    ft_open_map(char **argv, t_data *info)
     //printf("%d\n", info->n_row);
     //printf("%d\n", info->n_col);
     /*fins aqui pilla be el tamany de la matriu!*/
+    close(fd);
+    fd = open(argv[1], O_RDONLY);
+    ft_create_matrix(info, fd);
+    /*int i = 0;
+    while(info->map[i])
+    {
+        printf("%s", info->map[i]);
+        i++;
+    }*/
+    /*Serveix per imprimir la matriu*/
     close(fd);
 }
