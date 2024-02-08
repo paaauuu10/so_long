@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:57:20 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/08 17:39:03 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:46:59 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,21 @@ int ft_check_walls(t_data *info)
 
     // Verificar la primera columna
     int row = 0;
+    int col = 0;
     while (info->map[row])
     {
         if (info->map[row][0] != '1')
             ft_error_free("First column: Not enough walls", info);
         row++;
     }
+    /*col = info->n_col;
+    row = 0;
+    while (info->map[row])
+    {
+        if (info->map[row][col] != '1')
+            ft_error_free("Last columns: Not enough walls", info);
+        row++;
+    }*/
 
     return (0);
 }
