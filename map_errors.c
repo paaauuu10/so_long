@@ -6,11 +6,12 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:57:20 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/08 17:46:59 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:03:31 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <stdio.h>
 
 /*int ft_check_walls(t_data *info)
 {
@@ -36,33 +37,40 @@
 
 int ft_check_walls(t_data *info)
 {
-    /*// Verificar la primera fila
+    
+    // Verificar la primera fila
     int col = 0;
+    int i = 0;
+    int a;
+    while(info->map[i])
+    {
+        a = 0;
+        while(info->map[i][a])
+        {
+            printf("%c", info->map[i][a]);
+            a++;
+        }
+        i++;
+    }
+    
     while (info->map[0][col])
     {
+        write(1, &info->map[0][col], 1);
         if (info->map[0][col] != '1')
             ft_error_free("First row: Not enough walls", info);
         col++;
-    }*/
+    }
 
-    // Verificar la primera columna
-    int row = 0;
+    // Verificar la primera columna 
+            /* this works */
+    /*int row = 0;
     int col = 0;
     while (info->map[row])
     {
         if (info->map[row][0] != '1')
             ft_error_free("First column: Not enough walls", info);
         row++;
-    }
-    /*col = info->n_col;
-    row = 0;
-    while (info->map[row])
-    {
-        if (info->map[row][col] != '1')
-            ft_error_free("Last columns: Not enough walls", info);
-        row++;
     }*/
-
     return (0);
 }
 
