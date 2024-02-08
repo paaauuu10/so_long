@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:26:42 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/08 16:37:24 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/08 16:48:29 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int main(int argc, char **argv)
 		ft_error("File's extension is not < .ber >");
 	ft_info_to_0(&info);
 	ft_open_map(argv, &info);
+	ft_check_map_errors(&info);
 	return (0);
 }

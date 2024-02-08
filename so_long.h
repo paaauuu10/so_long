@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:24:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/08 16:38:20 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:14:52 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ void    ft_error(char *message);
 void    ft_error_free(char *message, t_data *info);
 void    ft_open_map(char **argv, t_data *info);
 void    ft_rows_and_columns(t_data *info, int fd);
+void    ft_check_map_errors(t_data *info);
+int     ft_check_size(t_data *info);
 
 #endif
