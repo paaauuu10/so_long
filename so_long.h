@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:24:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/08 15:27:46 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/08 15:57:08 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,13 @@ typedef struct s_data
     int     read_coins_flood;
     int     flood_fill_check;*/
 }                       t_data;
+
+typedef struct s_img
+{
+    /* void x8 */
+}               t_img;
+
+
 
 int	ft_check_extension(char *argv);
 void	ft_info_to_0(t_data	*info);
