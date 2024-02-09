@@ -4,6 +4,7 @@ What is checking the program right now:
 3. If perimeter's map is full of walls. Wall = 1!
 4. If there are characters not valids inside the map. Only valid ones P, E, C, 0, 1
 5. If there are more than one Exit(E) and one Player(P).
+6. How many coins(C) are in the map, if less than one -> Error
 
 What needs to check and it is not doing right now
 1. Check if there is a solution to finish the game.
@@ -11,6 +12,5 @@ What needs to check and it is not doing right now
     1.b. Is it possible to leave?
 
 Thinks that I need to do:
-1. How many coins are.
 2. Player's position(row, col).
 3. Exit's position(row, col).
