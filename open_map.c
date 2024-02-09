@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 11:39:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/08 17:35:32 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:18:59 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void    ft_create_matrix(t_data *info, int fd)
     {
         info->map[i] = get_next_line(fd);
         if (!info->map[i])
-            ft_error_free("Error getting de line to create the map", info);
+            ft_error_free("Error getting the line to create the map", info);
         i++;
     }
     info->map[i] = NULL;

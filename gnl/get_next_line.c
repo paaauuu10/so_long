@@ -3,114 +3,106 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: polmarti <polmarti@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 11:17:45 by pbotargu          #+#    #+#             */
-/*   Updated: 2023/11/15 12:38:56 by pbotargu         ###   ########.fr       */
+/*   Created: 2023/10/19 11:08:10 by polmarti          #+#    #+#             */
+/*   Updated: 2023/10/28 13:04:49 by polmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_free_storage(char **storage)
+char	*ft_free(char **ptr)
 {
-	if (storage != NULL && *storage != NULL)
+	if (ptr)
 	{
-		free(*storage);
-		*storage = NULL;
+		free(*ptr);
+		*ptr = NULL;
 	}
 	return (NULL);
 }
 
-char	*ft_clean_storage(char *storage)
+char	*ft_read_join(int fd, char *store)
 {
-	int		i;
-	int		j;
-	char	*new_mem;
+	char	*str_buf;
+	int		cntrl;
 
-	i = 0;
-	while (storage[i] && storage[i] != '\n')
-		i++;
-	if (!storage[i])
-		return (ft_free_storage(&storage));
-	new_mem = (char *)malloc(sizeof(char) * (ft_strlen(storage) - i + 1));
-	if (!new_mem)
-		return (ft_free_storage(&storage));
-	i++;
-	j = 0;
-	while (storage[i])
-		new_mem[j++] = storage[i++];
-	new_mem[j] = '\0';
-	ft_free_storage(&storage);
-	return (new_mem);
+	str_buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!str_buf)
+		return (ft_free(&store));
+	str_buf[0] = '\0';
+	cntrl = 1;
+	while (cntrl > 0 && !ft_strchr(str_buf, '\n'))
+	{
+		cntrl = read(fd, str_buf, BUFFER_SIZE);
+		if (cntrl == -1)
+			return (free(str_buf), ft_free(&store));
+		str_buf[cntrl] = '\0';
+		if (cntrl == 0)
+			break ;
+		store = ft_strjoin(store, str_buf);
+		if (!store)
+			return (free(str_buf), ft_free(&store));
+	}
+	free(str_buf);
+	return (store);
 }
 
-char	*ft_get_lines(char *storage, int i)
+char	*ft_fill_line(char *store)
 {
-	char	*memory;
+	char	*rtrn;
+	char	*s;
 
-	if (!storage[i])
+	if (store[0] == '\0')
 		return (NULL);
-	while (storage[i] && storage[i] != '\n')
-		i++;
-	if (storage[i] == '\n')
-		i++;
-	memory = (char *)malloc((i + 1) * sizeof(char));
-	if (!memory)
+	rtrn = ft_strchr(store, '\n');
+	if (!rtrn)
+		rtrn = ft_strchr(store, '\0');
+	s = ft_substr(store, 0, ((rtrn - store)));
+	if (!s)
 		return (NULL);
-	i = 0;
-	while (storage[i] && storage[i] != '\n')
-	{
-		memory[i] = storage[i];
-		i++;
-	}
-	if (storage[i] == '\n')
-	{
-		memory[i] = '\n';
-		i++;
-	}
-	memory[i] = '\0';
-	return (memory);
+	return (s);
 }
 
-char	*ft_read(int fd, char *storage)
+char	*ft_clean_store(char *store)
 {
-	char	*memory;
-	int		bytes;
+	int		start;
+	char	*ptraux;
+	char	*rtrn;
 
-	memory = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!memory)
-		return (ft_free_storage(&storage));
-	bytes = 1;
-	while (!ft_strchr(storage, '\n') && bytes != 0)
+	ptraux = ft_strchr(store, '\n');
+	if (!ptraux)
 	{
-		bytes = read(fd, memory, BUFFER_SIZE);
-		if (bytes == -1)
-		{
-			ft_free_storage(&storage);
-			ft_free_storage(&memory);
-			return (NULL);
-		}
-		memory[bytes] = '\0';
-		storage = ft_strjoin(&storage, memory);
+		rtrn = NULL;
+		return (ft_free(&store));
 	}
-	ft_free_storage(&memory);
-	return (storage);
+	start = (ptraux - store) + 1;
+	if (store[start] == '\0')
+		return (ft_free(&store));
+	rtrn = ft_substr(store, start, ft_strlen(store) - start);
+	ft_free(&store);
+	if (!rtrn)
+		return (NULL);
+	return (rtrn);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*storage;
+	static char	*store = NULL;
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
-	storage = ft_read(fd, storage);
-	if (!storage)
-		return (NULL);
-	line = ft_get_lines(storage, 0);
+		return (0);
+	if ((store && !ft_strchr(store, '\n')) || !store)
+	{
+		store = ft_read_join(fd, store);
+		if (!store)
+			return (NULL);
+	}
+	line = ft_fill_line(store);
 	if (!line)
-		return (ft_free_storage(&storage));
-	storage = ft_clean_storage(storage);
+		return (ft_free(&store));
+	store = ft_clean_store(store);
 	return (line);
 }
+// 53 POSIBLE ko abort
