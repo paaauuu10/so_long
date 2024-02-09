@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:36:13 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/09 14:47:56 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:59:37 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,6 @@ void    ft_n_coins(t_data *info)
 void    ft_collect_info(t_data *info)
 {
     ft_n_coins(info);
+    ft_player_position(info); /*must do*/
+    ft_exit_position(info); /*must do*/
 }
