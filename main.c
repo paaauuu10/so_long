@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:26:42 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/08 16:48:29 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:36:05 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ void	ft_info_to_0(t_data	*info)
 {
 	info->n_col = 0;
 	info->n_row = 0;
+	info->n_coins = 0;
+	info->map = NULL;
+	
 	//we have to add more information
 }
 
@@ -41,5 +44,6 @@ int main(int argc, char **argv)
 	ft_info_to_0(&info);
 	ft_open_map(argv, &info);
 	ft_check_map_errors(&info);
+	ft_collect_info(&info);
 	return (0);
 }

@@ -9,3 +9,8 @@ What needs to check and it is not doing right now
 1. Check if there is a solution to finish the game.
     1.a. Is it possibble to collect all the coins?
     1.b. Is it possible to leave?
+
+Thinks that I need to do:
+1. How many coins are.
+2. Player's position(row, col).
+3. Exit's position(row, col).

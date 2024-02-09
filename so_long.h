@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:24:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/09 14:04:50 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:36:50 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_data
     char    **map;
     int n_row;
     int n_col;
+    int n_coins;
 
     /*
     void   "x8" 
@@ -58,6 +59,7 @@ void    ft_check_rectangle(t_data *info);
 void    ft_check_last_walls(t_data *info);
 void    ft_check_1st_walls(t_data *info);
 void	ft_check_params(t_data *info);
+void    ft_collect_info(t_data *info);
 
 
 #endif
