@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 11:39:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/09 11:18:59 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:00:49 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,10 @@ void    ft_open_map(char **argv, t_data *info)
     if (fd == -1)
         ft_error("Error opening map");
     ft_rows_and_columns(info, fd);
-    //printf("%d\n", info->n_row);
-    //printf("%d\n", info->n_col);
-    /*fins aqui pilla be el tamany de la matriu!*/
     close(fd);
     fd = open(argv[1], O_RDONLY);
+    if (fd == -1)
+        ft_error("Error opening map");
     ft_create_matrix(info, fd);
-    /*int i = 0;
-    while(info->map[i])
-    {
-        printf("%s", info->map[i]);
-        i++;
-    }*/
-    /*Serveix per imprimir la matriu*/
     close(fd);
 }

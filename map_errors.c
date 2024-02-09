@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:57:20 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/09 12:50:55 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:07:51 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,26 +79,6 @@ void ft_check_last_walls(t_data *info)
 		col++;
 	}
 }
-void	ft_check_params(t_data *info)
-{
-	int	row;
-	int col;
-
-	row = 0;
-	while (info->map[row])
-	{
-		col = 0;
-		while (info->map[row][col])
-		{
-			if (info->map[row][col] != 'E' && info->map[row][col] != 'P' && \
-				info->map[row][col]	!= 'C' && info->map[row][col] != '0' && \
-				info->map[row][col]	!= '1')
-				ft_error_free("Found character not accepted in the map", info);
-			col++;
-		}
-		row++;
-	}
-}
 void	ft_check_doubles(t_data *info)
 {
 	int row;
@@ -108,8 +88,8 @@ void	ft_check_doubles(t_data *info)
 
 	p = 0;
 	e = 0;
-	row = 0;
-	while (info->map[row])
+	row = -1;
+	while (info->map[++row])
 	{
 		col = 0;
 		while(info->map[row][col])
@@ -121,10 +101,11 @@ void	ft_check_doubles(t_data *info)
 			ft_check_params(info);
 			col++;
 		}	
-		row++;
 	}
-	if (p > 1 || e > p)
+	if (p > 1 || e > 1)
 		ft_error_free("There is more than one P or E", info);
+	else if (p < 1 || e < 1)
+		ft_error_free("P or E is missing", info);
 }
 
 void    ft_check_map_errors(t_data *info)

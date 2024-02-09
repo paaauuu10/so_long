@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:24:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/09 12:11:02 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:04:50 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,7 @@ void    ft_check_map_errors(t_data *info);
 void    ft_check_rectangle(t_data *info);
 void    ft_check_last_walls(t_data *info);
 void    ft_check_1st_walls(t_data *info);
+void	ft_check_params(t_data *info);
+
 
 #endif

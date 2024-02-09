@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polmarti <polmarti@student.42barcel>       +#+  +:+       +#+        */
+/*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:08:10 by polmarti          #+#    #+#             */
-/*   Updated: 2023/10/28 13:04:49 by polmarti         ###   ########.fr       */
+/*   Updated: 2024/02/09 13:57:09 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,4 +105,4 @@ char	*get_next_line(int fd)
 	store = ft_clean_store(store);
 	return (line);
 }
-// 53 POSIBLE ko abort
+

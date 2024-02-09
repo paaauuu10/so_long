@@ -1,0 +1,11 @@
+What is checking the program right now:
+1. If the extension of the map is .ber
+2. If the map is a rectangle
+3. If perimeter's map is full of walls. Wall = 1!
+4. If there are characters not valids inside the map. Only valid ones P, E, C, 0, 1
+5. If there are more than one Exit(E) and one Player(P).
+
+What needs to check and it is not doing right now
+1. Check if there is a solution to finish the game.
+    1.a. Is it possibble to collect all the coins?
+    1.b. is it possible to leave?
