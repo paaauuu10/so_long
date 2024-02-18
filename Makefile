@@ -6,14 +6,14 @@
 #    By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/07 10:46:45 by pbotargu          #+#    #+#              #
-#    Updated: 2024/02/18 15:56:50 by pbotargu         ###   ########.fr        #
+#    Updated: 2024/02/18 16:03:19 by pbotargu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror -fsanitize=address
+FLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 SOURCES = main.c error.c open_map.c gnl/get_next_line_utils.c \
