@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:24:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/18 14:42:28 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/18 15:47:45 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_data
     int n_coins;
     int player_row;
     int player_col;
+    int correct_exit;
+    int n_coins_fill;
 
     /*
     void   "x8" 

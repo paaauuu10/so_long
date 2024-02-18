@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:26:42 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/09 14:36:05 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/18 15:45:32 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ void	ft_info_to_0(t_data	*info)
 	info->n_col = 0;
 	info->n_row = 0;
 	info->n_coins = 0;
+	info->correct_exit = 0;
+	info->player_col = 0;
+	info->player_row = 0;
+	info->n_coins_fill = 0;
 	info->map = NULL;
 	
 	//we have to add more information
