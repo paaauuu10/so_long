@@ -5,12 +5,10 @@ What is checking the program right now:
 4. If there are characters not valids inside the map. Only valid ones P, E, C, 0, 1
 5. If there are more than one Exit(E) and one Player(P).
 6. How many coins(C) are in the map, if less than one -> Error
-
-What needs to check and it is not doing right now
-1. Check if there is a solution to finish the game.
-    1.a. Is it possibble to collect all the coins?
-    1.b. Is it possible to leave?
+7. Check if there is a solution to finish the game.
+    7.a. Is it possibble to collect all the coins?
+    7.b. Is it possible to leave?
 
 Thinks that I need to do:
-2. Player's position(row, col). (ALREADY DONE)
-3. Exit's position(row, col).
+1. Start working mlx.
+2. Selecting the images that I will use.
