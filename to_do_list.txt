@@ -12,5 +12,5 @@ What needs to check and it is not doing right now
     1.b. Is it possible to leave?
 
 Thinks that I need to do:
-2. Player's position(row, col).
+2. Player's position(row, col). (ALREADY DONE)
 3. Exit's position(row, col).
