@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:24:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/18 16:16:41 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/19 11:20:08 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,9 @@ typedef struct s_data
 
 typedef struct s_img
 {
-    /* void x8 */
-    void    *img;
+    void    *mlx_window;
+    void    *mlx;
+    
 }               t_img;
 
 
@@ -65,6 +66,7 @@ void    ft_check_last_walls(t_data *info);
 void    ft_check_1st_walls(t_data *info);
 void	ft_check_params(t_data *info);
 void    ft_collect_info(t_data *info);
+void    init_game(t_data *info, t_img *map);
 
 
 #endif

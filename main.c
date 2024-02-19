@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:26:42 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/18 15:45:32 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/19 11:04:05 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ft_info_to_0(t_data	*info)
 	info->player_row = 0;
 	info->n_coins_fill = 0;
 	info->map = NULL;
+
 	
 	//we have to add more information
 }
@@ -40,6 +41,7 @@ void	ft_info_to_0(t_data	*info)
 int main(int argc, char **argv)
 {
 	t_data	info;
+	t_img	map;
 
 	if (argc != 2)
 		ft_error("Wrong number of arguments");
@@ -49,5 +51,6 @@ int main(int argc, char **argv)
 	ft_open_map(argv, &info);
 	ft_check_map_errors(&info);
 	ft_collect_info(&info);
+	init_game(&info, &map);
 	return (0);
 }
