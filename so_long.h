@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:24:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/19 11:20:08 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/19 15:44:53 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 # include "./gnl/get_next_line.h"
+#include "./mlx/mlx.h"
 
 /*Struct to handle map distribution*/
 
@@ -49,6 +50,8 @@ typedef struct s_img
 {
     void    *mlx_window;
     void    *mlx;
+    void    *img;
+    void    *img2;
     
 }               t_img;
 
@@ -67,6 +70,6 @@ void    ft_check_1st_walls(t_data *info);
 void	ft_check_params(t_data *info);
 void    ft_collect_info(t_data *info);
 void    init_game(t_data *info, t_img *map);
-
+int     ft_close();
 
 #endif
