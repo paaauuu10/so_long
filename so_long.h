@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:24:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/21 12:17:27 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:29:14 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,18 @@
 
 /*Struct to handle map distribution*/
 
+typedef struct s_img
+{
+    void    *mlx_window;
+    void    *mlx;
+    void    *imgP;
+    void    *imgG;
+    void    *imgW;
+    void    *imgC;
+    void    *imgE;
+    
+}               t_img;
+
 typedef struct s_data
 {
     char    **map;
@@ -32,6 +44,8 @@ typedef struct s_data
     int correct_exit;
     int n_coins_fill;
     int i;
+    
+    //t_img *map; /*estudiar aquesta opcio */
 
     /*
     void   "x8" 
@@ -45,18 +59,6 @@ typedef struct s_data
     int     read_coins_flood;
     int     flood_fill_check;*/
 }                       t_data;
-
-typedef struct s_img
-{
-    void    *mlx_window;
-    void    *mlx;
-    void    *imgP;
-    void    *imgG;
-    void    *imgW;
-    void    *imgC;
-    void    *imgE;
-    
-}               t_img;
 
 
 
@@ -74,6 +76,8 @@ void	ft_check_params(t_data *info);
 void    ft_collect_info(t_data *info);
 void    init_game(t_data *info, t_img *map);
 int     ft_close();
-int     key_hook(int keycode);
+int     key_hook(int keycode, t_data *info, t_img *map);
+void    ft_up(t_data *info, t_img *map);
+void    ft_map(t_data *info, t_img *map);
 
 #endif

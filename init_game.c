@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:04:17 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/21 15:37:05 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:03:45 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,23 +73,25 @@ void    ft_map(t_data *info, t_img *map)
         row++;
         height += 50;
     }
-    printf("n_row: %d\n", info->n_row);
-    printf("row: %d\n", row);
-
 }
 void    init_game(t_data *info, t_img *map)
 {
     ft_collect_images(map);
     ft_map(info, map);
 }
-int	key_hook(int keycode)
+int	key_hook(int keycode, t_data *info, t_img *map)
 {
 	if (keycode == 53)   // Código de tecla 'Esc'
 		ft_close();
     else if (keycode == 124 || keycode == 2)
+    {
         printf("Nos hemos movido a la derecha\n");
+    }
     else if (keycode == 126 || keycode == 13)
+    {
+        ft_up(info, map);
         printf("Nos hemos movido hacia arriba\n");
+    }
     else if (keycode == 123 || keycode == 0)
         printf("Nos hemos movido a la izquierda\n");
     else if (keycode == 125 || keycode == 1)

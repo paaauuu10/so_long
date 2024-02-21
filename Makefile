@@ -6,7 +6,7 @@
 #    By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/07 10:46:45 by pbotargu          #+#    #+#              #
-#    Updated: 2024/02/19 13:44:59 by pbotargu         ###   ########.fr        #
+#    Updated: 2024/02/21 16:01:46 by pbotargu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ FLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 SOURCES = main.c error_and_free.c open_map.c gnl/get_next_line_utils.c \
-	gnl/get_next_line.c map_errors.c utils.c collect_info.c init_game.c
+	gnl/get_next_line.c map_errors.c utils.c collect_info.c init_game.c \
+	movements.c 
 
 MLX = -framework OpenGL -framework AppKit
 
