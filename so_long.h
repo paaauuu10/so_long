@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:24:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/19 15:44:53 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/21 12:17:27 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,17 @@ typedef struct s_img
 {
     void    *mlx_window;
     void    *mlx;
-    void    *img;
-    void    *img2;
+    void    *imgP;
+    void    *imgG;
+    void    *imgW;
+    void    *imgC;
+    void    *imgE;
     
 }               t_img;
 
 
 
-int	ft_check_extension(char *argv);
+int     ft_check_extension(char *argv);
 void	ft_info_to_0(t_data	*info);
 void    ft_error(char *message);
 void    ft_error_free(char *message, t_data *info);
@@ -71,5 +74,6 @@ void	ft_check_params(t_data *info);
 void    ft_collect_info(t_data *info);
 void    init_game(t_data *info, t_img *map);
 int     ft_close();
+int     key_hook(int keycode);
 
 #endif
