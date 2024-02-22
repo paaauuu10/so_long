@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polmarti <polmarti@student.42barcel>       +#+  +:+       +#+        */
+/*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:07:54 by polmarti          #+#    #+#             */
-/*   Updated: 2023/10/19 11:07:56 by polmarti         ###   ########.fr       */
+/*   Updated: 2024/02/22 19:47:16 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strchr(const char *s, int c)
 {
 	while (*(char *)s && *(char *)s != (char)c)
-		s++;
+		s++; 
 	if (*(char *)s != (char)c)
 		return (0);
 	return ((char *)s);
