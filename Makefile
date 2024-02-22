@@ -6,7 +6,7 @@
 #    By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/07 10:46:45 by pbotargu          #+#    #+#              #
-#    Updated: 2024/02/21 16:01:46 by pbotargu         ###   ########.fr        #
+#    Updated: 2024/02/22 14:53:17 by pbotargu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,27 +16,26 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
-SOURCES = main.c error_and_free.c open_map.c gnl/get_next_line_utils.c \
-	gnl/get_next_line.c map_errors.c utils.c collect_info.c init_game.c \
-	movements.c 
+SOURCES = src/main.c src/error_and_free.c src/open_map.c \
+gnl/get_next_line_utils.c gnl/get_next_line.c src/map_errors.c src/utils.c \
+src/collect_info.c src/init_game.c src/movements.c print/baseprintf.c \
+print/ft_printf_char.c print/ft_printf_string.c print/ft_printf_id.c 
 
-MLX = -framework OpenGL -framework AppKit
+MLX = -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 OBJECTS = $(SOURCES:.c=.o)
-DEPS = $(SOURCES:.c=.d)
+DEPS = $(OBJECTS:.o=.d)
 
-INCLUDE = -I includes -I libft
-LIBFT_PATH = ./libft
-LIBFT = libft/libft.a
+INCLUDE = -Iinc
 
 all: makemlx $(NAME)
 
 $(NAME): $(OBJECTS) Makefile
-	$(CC) $(FLAGS) mlx/libmlx.a $(MLX) $(OBJECTS) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJECTS) $(MLX) -o $(NAME)
 
-%.o: %.c Makefile
+%.o: %.c
 	@mkdir -p $(dir $@)
-	$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
+	$(CC) $(FLAGS) $(INCLUDE) -MMD -c $< -o $@
 
 makemlx: 
 	$(MAKE) -C mlx/
@@ -44,11 +43,11 @@ makemlx:
 -include $(DEPS)
 
 clean:
-	RM $(OBJECTS) $(DEPS) $(NAME)
+	$(RM) $(OBJECTS) $(DEPS) $(NAME)
 	$(MAKE) clean -C mlx
 
 fclean: clean
-	RM $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

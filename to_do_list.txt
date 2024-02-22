@@ -8,7 +8,11 @@ What is checking the program right now:
 7. Check if there is a solution to finish the game.
     7.a. Is it possibble to collect all the coins?
     7.b. Is it possible to leave?
+8. Mlx implemented.
+9. You can now play.
 
 Thinks that I need to do:
-1. Start working mlx.
-2. Selecting the images that I will use.
+1. Limit the number of pixels
+2. Seg fault changing the name of the image
+3. Number of movements
+

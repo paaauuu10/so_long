@@ -6,11 +6,11 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:26:42 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 12:27:37 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 15:14:50 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 int	ft_check_extension(char *argv)
 {
@@ -40,11 +40,24 @@ void	ft_info_to_0(t_data	*info)
 	//we have to add more information
 }
 
+void	ft_how_to_play()
+{
+	ft_printf("\n              Welcome to my so_long project!");
+	ft_printf("\n");
+	ft_printf("\nThe purpose of the game is to help Harry catch the snitch");
+	ft_printf("\n");
+	ft_printf("\nYou need to collect all broomsticks before the snitch");
+	ft_printf("\n");
+	ft_printf("\nTry doing it in the minimum number of movements");
+	ft_printf("\n");
+	ft_printf("\n");
+	
+}
+
 int main(int argc, char **argv)
 {
 	t_data	info;
-	//t_img	map;
-
+	
 	if (argc != 2)
 		ft_error("Wrong number of arguments");
 	if (ft_check_extension(argv[1]) == 1)
@@ -52,6 +65,7 @@ int main(int argc, char **argv)
 	ft_info_to_0(&info);
 	ft_open_map(argv, &info);
 	ft_check_map_errors(&info);
+	ft_how_to_play();
 	ft_collect_info(&info);
 	info.mlx = mlx_init();
 	info.mlx_window = mlx_new_window(info.mlx, (info.n_col * 50), \

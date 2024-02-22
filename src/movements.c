@@ -6,11 +6,11 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:57:58 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 12:43:04 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 14:36:52 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 void    ft_up(t_data *info)
 {
@@ -27,7 +27,7 @@ void    ft_up(t_data *info)
     if (info->map[info->player_row][info->player_col] == 'e')
     {
         if (info->collect_coins == info->n_coins)
-            ft_close();
+            ft_close(info, 1);
         flag = 1;    
     }
     info->map[info->player_row][info->player_col] = 'p';
@@ -51,7 +51,7 @@ void    ft_down(t_data *info)
     if (info->map[info->player_row][info->player_col] == 'e')
     {
         if (info->collect_coins == info->n_coins)
-            ft_close();
+            ft_close(info, 1);
         flag = 1;    
     }
     info->map[info->player_row][info->player_col] = 'p';
@@ -75,7 +75,7 @@ void    ft_left(t_data *info)
     if (info->map[info->player_row][info->player_col] == 'e')
     {
         if (info->collect_coins == info->n_coins)
-            ft_close();
+            ft_close(info, 1);
         flag = 1;    
     }
     info->map[info->player_row][info->player_col] = 'p';
@@ -99,7 +99,7 @@ void    ft_right(t_data *info)
     if (info->map[info->player_row][info->player_col] == 'e')
     {
         if (info->collect_coins == info->n_coins)
-            ft_close();
+            ft_close(info, 1);
         flag = 1;    
     }
     info->map[info->player_row][info->player_col] = 'p';

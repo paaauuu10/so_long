@@ -6,11 +6,11 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:36:13 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/19 10:46:30 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 14:36:28 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 void    ft_n_coins(t_data *info)
 {

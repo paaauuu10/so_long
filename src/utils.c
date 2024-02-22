@@ -6,11 +6,11 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:03:59 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/09 14:04:30 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 14:37:30 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 void	ft_check_params(t_data *info)
 {

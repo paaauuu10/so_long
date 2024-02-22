@@ -6,11 +6,11 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:04:17 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 12:48:29 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 15:18:36 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 void    ft_collect_images(t_data *map)
 {
@@ -55,12 +55,10 @@ void    ft_map(t_data *info)
     int col;
     int width;
     int height;
-    int tmp;
 
     row = 0;
     width = 0;
     height = 0;
-    tmp = 0;
     while (row < info->n_row)
     {
         col = 0;
@@ -74,15 +72,9 @@ void    ft_map(t_data *info)
         row++;
         height += 50;
     }
-    //printf("%d\n", tmp);
-    //printf("%d\n", info->movements);
-    if (tmp != info->movements)
-        printf("movments: %d\n", info->movements);
-    tmp = info->movements;
-    printf("%d\n", tmp);
-    
-    
+    ft_printf("Number of movements: %d\n", info->movements);
 }
+
 void    init_game(t_data *info)
 {
     ft_collect_images(info);
@@ -91,7 +83,7 @@ void    init_game(t_data *info)
 int	key_hook(int keycode, t_data *info)
 {
 	if (keycode == 53)
-		ft_close();
+		ft_close(info, 0);
     else if (keycode == 124 || keycode == 2)
         ft_right(info);
     else if (keycode == 126 || keycode == 13)

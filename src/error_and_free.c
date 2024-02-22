@@ -6,11 +6,11 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 11:14:05 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 11:14:13 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 15:20:53 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 void    ft_error_free(char *message, t_data *info)
 {
@@ -52,10 +52,15 @@ void    ft_error(char *message)
     exit (1);
 }
 
-int ft_close()
+int ft_close(t_data *info, int i)
 {
-    /*revisar aqui possibles leaks*/
-    /*mlx_destroy_window(info->mlx, map->mlx_window);*/
+    if (i == 1)
+    {
+        ft_printf("Number of movements: %d\n", info->movements);
+        ft_printf("\n🧙🏼YOU'VE CATCH THE SNITCH🧙🏼\n");
+        ft_printf("\nThanks for playing so_long by @pbotargu\n\n");
+    }
+    mlx_destroy_window(info->mlx, info->mlx_window);
     exit(0);
 }
 

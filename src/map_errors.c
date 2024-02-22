@@ -6,12 +6,11 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:57:20 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/09 14:42:58 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:04:59 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-#include <stdio.h>
+#include "../inc/so_long.h"
 
 void ft_check_rectangle(t_data *info)
 {
@@ -41,8 +40,6 @@ void ft_check_rectangle(t_data *info)
 }
 void ft_check_1st_walls(t_data *info)
 {    
-   //Verificar la primera columna 
-			/* this works */
 	int row = 0;
 	int col = 0;
 	while (info->map[row])
@@ -60,8 +57,6 @@ void ft_check_1st_walls(t_data *info)
 }
 void ft_check_last_walls(t_data *info)
 {    
-   //Verificar la primera columna 
-			/* this works */
 	int row = 0;
 	int col = info->n_col - 1;
 	while (info->map[row])
