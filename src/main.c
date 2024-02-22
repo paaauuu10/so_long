@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:26:42 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 15:14:50 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:35:58 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_check_extension(char *argv)
 {
-	int i;
+	int	i;
 
 	i = ft_strlen(argv);
 	if (i > 2 && argv[i - 4] == '.' && argv[i - 3] == 'b' && \
@@ -35,12 +35,9 @@ void	ft_info_to_0(t_data	*info)
 	info->collect_coins = 0;
 	info->movements = 0;
 	info->map = NULL;
-	
-	
-	//we have to add more information
 }
 
-void	ft_how_to_play()
+void	ft_how_to_play(void)
 {
 	ft_printf("\n              Welcome to my so_long project!");
 	ft_printf("\n");
@@ -51,13 +48,12 @@ void	ft_how_to_play()
 	ft_printf("\nTry doing it in the minimum number of movements");
 	ft_printf("\n");
 	ft_printf("\n");
-	
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_data	info;
-	
+
 	if (argc != 2)
 		ft_error("Wrong number of arguments");
 	if (ft_check_extension(argv[1]) == 1)
@@ -74,7 +70,5 @@ int main(int argc, char **argv)
 	mlx_key_hook(info.mlx_window, key_hook, &info);
 	mlx_hook(info.mlx_window, 17, 0, &ft_close, &info);
 	mlx_loop(info.mlx);
-	
-	
 	return (0);
 }
