@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 11:14:05 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 16:52:07 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:54:51 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int ft_close(t_data *info, int i)
         ft_printf("\n🧙🏼YOU'VE CATCH THE SNITCH🧙🏼\n");
         ft_printf("\nThanks for playing so_long by @pbotargu\n\n");
     }
-    mlx_destroy_window(info->mlx, info->mlx_window);
+    mlx_destroy_window(info->mlx, info->mlxw);
     exit(0);
 }
 

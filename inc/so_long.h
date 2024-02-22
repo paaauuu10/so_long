@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:24:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 17:01:05 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:49:30 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ typedef struct s_data
 	int		i;
 	int		collect_coins;
 	int		movements;
-	void	*mlx_window;
+	int		w;
+	int		h;
+	void	*mlxw;
 	void	*mlx;
 	void	*imgp;
 	void	*imgg;
