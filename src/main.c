@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:26:42 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 17:35:58 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:58:37 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ int	main(int argc, char **argv)
 	ft_how_to_play();
 	ft_collect_info(&info);
 	info.mlx = mlx_init();
-	info.mlx_window = mlx_new_window(info.mlx, (info.n_col * 50), \
+	info.mlxw = mlx_new_window(info.mlx, (info.n_col * 50), \
 	(info.n_row * 50), "so_long");
 	init_game(&info);
-	mlx_key_hook(info.mlx_window, key_hook, &info);
-	mlx_hook(info.mlx_window, 17, 0, &ft_close, &info);
+	mlx_key_hook(info.mlxw, key_hook, &info);
+	mlx_hook(info.mlxw, 17, 0, &ft_close, &info);
 	mlx_loop(info.mlx);
 	return (0);
 }
