@@ -13,7 +13,5 @@ What is checking the program right now:
 10. Limit the size of the screen.
 11. Seg fault changing the name of the image.
 12. Number of movements.
-
-Thinks that I need to do:
-2. Norminette
+13. Norminette OK
 

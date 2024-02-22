@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:08:10 by polmarti          #+#    #+#             */
-/*   Updated: 2024/02/09 13:57:09 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:19:19 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,4 +105,3 @@ char	*get_next_line(int fd)
 	store = ft_clean_store(store);
 	return (line);
 }
-
