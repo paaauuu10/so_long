@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 11:14:05 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/19 14:18:07 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 11:14:13 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void    ft_error(char *message)
 int ft_close()
 {
     /*revisar aqui possibles leaks*/
-    //mlx_destroy_window(map->mlx, map->mlx_window);
+    /*mlx_destroy_window(info->mlx, map->mlx_window);*/
     exit(0);
 }
 
