@@ -12,8 +12,8 @@ What is checking the program right now:
 9. You can now play.
 10. Limit the size of the screen.
 11. Seg fault changing the name of the image.
+12. Number of movements.
 
 Thinks that I need to do:
-1. Number of movements
 2. Norminette
 
