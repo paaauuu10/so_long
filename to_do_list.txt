@@ -10,9 +10,9 @@ What is checking the program right now:
     7.b. Is it possible to leave?
 8. Mlx implemented.
 9. You can now play.
+10. Limit the size of the screen.
 
 Thinks that I need to do:
-1. Limit the number of pixels
-2. Seg fault changing the name of the image
-3. Number of movements
+1. Seg fault changing the name of the image
+2. Number of movements
 

@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:04:17 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 15:18:36 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:37:08 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,20 @@ void    ft_collect_images(t_data *map)
     int w = 50;
     int h = 50;
     map->imgP = mlx_xpm_file_to_image(map->mlx, "./images/hp.xpm", &w, &h);
+    if (map->imgP == NULL)
+        ft_error("Not found the image.xpm");
     map->imgG = mlx_xpm_file_to_image(map->mlx, "./images/g.xpm", &w, &h);
+    if (map->imgG == NULL)
+        ft_error("Not found the image.xpm");
     map->imgW = mlx_xpm_file_to_image(map->mlx, "./images/w.xpm", &w, &h);
+    if (map->imgW == NULL)
+        ft_error("Not found the image.xpm");
     map->imgE = mlx_xpm_file_to_image(map->mlx, "./images/e.xpm", &w, &h);
+    if (map->imgE == NULL)
+        ft_error("Not found the image.xpm");
     map->imgC = mlx_xpm_file_to_image(map->mlx, "./images/c.xpm", &w, &h);
+    if (map->imgC == NULL)
+        ft_error("Not found the image.xpm");
 }
 
 void    ft_print_image(t_data *info, int w, int h, int row, int col)
