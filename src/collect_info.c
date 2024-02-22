@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:36:13 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 14:36:28 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:43:08 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ void    ft_player_position(t_data *info)
         }
         row++;
     }
-
-
 }
 void    ft_fill(t_data *info, int player_row, int player_col)
 {

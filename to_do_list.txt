@@ -11,8 +11,9 @@ What is checking the program right now:
 8. Mlx implemented.
 9. You can now play.
 10. Limit the size of the screen.
+11. Seg fault changing the name of the image.
 
 Thinks that I need to do:
-1. Seg fault changing the name of the image
-2. Number of movements
+1. Number of movements
+2. Norminette
 

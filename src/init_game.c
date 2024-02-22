@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:04:17 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 16:37:08 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:58:50 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@ void    ft_collect_images(t_data *map)
 {
     int w = 50;
     int h = 50;
-    map->imgP = mlx_xpm_file_to_image(map->mlx, "./images/hp.xpm", &w, &h);
-    if (map->imgP == NULL)
+    map->imgp = mlx_xpm_file_to_image(map->mlx, "./images/hp.xpm", &w, &h);
+    if (map->imgp == NULL)
         ft_error("Not found the image.xpm");
-    map->imgG = mlx_xpm_file_to_image(map->mlx, "./images/g.xpm", &w, &h);
-    if (map->imgG == NULL)
+    map->imgg = mlx_xpm_file_to_image(map->mlx, "./images/g.xpm", &w, &h);
+    if (map->imgg == NULL)
         ft_error("Not found the image.xpm");
-    map->imgW = mlx_xpm_file_to_image(map->mlx, "./images/w.xpm", &w, &h);
-    if (map->imgW == NULL)
+    map->imgw = mlx_xpm_file_to_image(map->mlx, "./images/w.xpm", &w, &h);
+    if (map->imgw == NULL)
         ft_error("Not found the image.xpm");
-    map->imgE = mlx_xpm_file_to_image(map->mlx, "./images/e.xpm", &w, &h);
-    if (map->imgE == NULL)
+    map->imge = mlx_xpm_file_to_image(map->mlx, "./images/e.xpm", &w, &h);
+    if (map->imge == NULL)
         ft_error("Not found the image.xpm");
-    map->imgC = mlx_xpm_file_to_image(map->mlx, "./images/c.xpm", &w, &h);
-    if (map->imgC == NULL)
+    map->imgc = mlx_xpm_file_to_image(map->mlx, "./images/c.xpm", &w, &h);
+    if (map->imgc == NULL)
         ft_error("Not found the image.xpm");
 }
 
@@ -37,26 +37,26 @@ void    ft_print_image(t_data *info, int w, int h, int row, int col)
 {
     if (info->map[row][col] == '1')
     {
-        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgG, w, h);
-        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgW, w, h);
+        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgg, w, h);
+        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgw, w, h);
     }
     else if (info->map[row][col] == 'p')
     {
-        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgG, w, h);
-        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgP, w, h);
+        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgg, w, h);
+        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgp, w, h);
     }
     else if (info->map[row][col] == 'e')
     {
-        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgG, w, h);
-        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgE, w, h);
+        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgg, w, h);
+        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imge, w, h);
     }
     else if (info->map[row][col] == 'c') 
     {    
-        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgG, w, h);
-        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgC, w, h); 
+        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgg, w, h);
+        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgc, w, h); 
     }
     else
-        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgG, w, h);
+        mlx_put_image_to_window(info->mlx, info->mlx_window, info->imgg, w, h);
 }
 
 void    ft_map(t_data *info)
@@ -82,7 +82,6 @@ void    ft_map(t_data *info)
         row++;
         height += 50;
     }
-    ft_printf("Number of movements: %d\n", info->movements);
 }
 
 void    init_game(t_data *info)
@@ -92,7 +91,10 @@ void    init_game(t_data *info)
 }
 int	key_hook(int keycode, t_data *info)
 {
-	if (keycode == 53)
+	int flag;
+
+    flag = info->movements;
+    if (keycode == 53)
 		ft_close(info, 0);
     else if (keycode == 124 || keycode == 2)
         ft_right(info);
@@ -102,5 +104,7 @@ int	key_hook(int keycode, t_data *info)
         ft_left(info);
     else if (keycode == 125 || keycode == 1)
         ft_down(info);
+    if (flag != info->movements)
+        ft_printf("Number of movements: %d\n", info->movements);
 	return (0);
 }

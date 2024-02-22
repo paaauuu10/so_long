@@ -6,12 +6,11 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 11:39:07 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 16:22:06 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:50:24 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
-#include <fcntl.h>
 
 void    ft_rows_and_columns(t_data *info, int fd)
 {

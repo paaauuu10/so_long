@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:03:59 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 14:37:30 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:07:35 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_check_params(t_data *info)
 {
 	int	row;
-	int col;
+	int	col;
 
 	row = 0;
 	while (info->map[row])
@@ -24,8 +24,8 @@ void	ft_check_params(t_data *info)
 		while (info->map[row][col])
 		{
 			if (info->map[row][col] != 'E' && info->map[row][col] != 'P' && \
-				info->map[row][col]	!= 'C' && info->map[row][col] != '0' && \
-				info->map[row][col]	!= '1')
+			info->map[row][col] != 'C' && info->map[row][col] != '0' && \
+			info->map[row][col] != '1')
 				ft_error_free("Found character not accepted in the map", info);
 			col++;
 		}

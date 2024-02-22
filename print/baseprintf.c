@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:19:57 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 14:51:47 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:01:47 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	ft_ret_num(const char *s, va_list args, int *ret_num, int i)
 				ft_printf_id(va_arg(args, int), ret_num, "0123456789");
 			else if (s[i] == '%')
 				ft_printf_char('%', ret_num);
-		}	
+		}
 		else
 			ft_printf_char(s[i], ret_num);
 	}
