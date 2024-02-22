@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:04:17 by pbotargu          #+#    #+#             */
-/*   Updated: 2024/02/22 17:56:54 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:12:21 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,19 @@ void	ft_print_image(t_data *inf, int row, int col)
 		mlx_put_image_to_window(inf->mlx, inf->mlxw, inf->imgg, inf->w, inf->h);
 		mlx_put_image_to_window(inf->mlx, inf->mlxw, inf->imge, inf->w, inf->h);
 	}
-	else if (inf->map[row][col] == 'c') 
-	{    
+	else if (inf->map[row][col] == 'c')
+	{
 		mlx_put_image_to_window(inf->mlx, inf->mlxw, inf->imgg, inf->w, inf->h);
-		mlx_put_image_to_window(inf->mlx, inf->mlxw, inf->imgc, inf->w, inf->h); 
+		mlx_put_image_to_window(inf->mlx, inf->mlxw, inf->imgc, inf->w, inf->h);
 	}
 	else
 		mlx_put_image_to_window(inf->mlx, inf->mlxw, inf->imgg, inf->w, inf->h);
 }
 
-void    ft_map(t_data *info)
+void	ft_map(t_data *info)
 {
-	int row;
-	int col;
+	int	row;
+	int	col;
 
 	row = 0;
 	info->w = 0;
@@ -85,14 +85,15 @@ void    ft_map(t_data *info)
 	}
 }
 
-void    init_game(t_data *info)
+void	init_game(t_data *info)
 {
 	ft_collect_images(info);
 	ft_map(info);
 }
+
 int	key_hook(int keycode, t_data *info)
 {
-	int flag;
+	int	flag;
 
 	flag = info->movements;
 	if (keycode == 53)
@@ -101,7 +102,7 @@ int	key_hook(int keycode, t_data *info)
 		ft_right(info);
 	else if (keycode == 126 || keycode == 13)
 		ft_up(info);
-	else if (keycode == 123 || keycode == 0) 
+	else if (keycode == 123 || keycode == 0)
 		ft_left(info);
 	else if (keycode == 125 || keycode == 1)
 		ft_down(info);
